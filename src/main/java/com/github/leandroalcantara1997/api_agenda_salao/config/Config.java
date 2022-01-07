@@ -3,12 +3,12 @@ package com.github.leandroalcantara1997.api_agenda_salao.config;
 import java.util.Date;
 
 import com.github.leandroalcantara1997.api_agenda_salao.entitty.Cliente;
-import com.github.leandroalcantara1997.api_agenda_salao.service.ServiceCliente;
+import com.github.leandroalcantara1997.api_agenda_salao.service.ClienteService;
 
 import org.springframework.boot.CommandLineRunner;
 
 public class Config implements CommandLineRunner{
-    private ServiceCliente serviceCliente;
+    private ClienteService serviceCliente;
     @Override
     public void run(String... args) throws Exception {
         // TODO Auto-generated method stub

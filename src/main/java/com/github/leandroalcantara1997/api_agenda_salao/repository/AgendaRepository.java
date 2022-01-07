@@ -1,6 +1,6 @@
-package com.github.leandroalcantara1997.apiagenda_salao.repository;
+package com.github.leandroalcantara1997.api_agenda_salao.repository;
 
-import com.github.leandroalcantara1997.apiagenda_salao.entitty.Agenda;
+import com.github.leandroalcantara1997.api_agenda_salao.entitty.Agenda;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

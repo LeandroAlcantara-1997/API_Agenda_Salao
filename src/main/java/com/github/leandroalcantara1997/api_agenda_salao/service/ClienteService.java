@@ -10,13 +10,21 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ServiceCliente {
+public class ClienteService {
 
     @Autowired
     private ClienteRepository cli;
 
     public void cadastroCliente(Cliente cliente) throws Exception {
-        System.out.println(cli);
         cli.save(cliente);
     }
+
+    public void atualizaCadastro(Cliente cliente) throws Exception {
+        cli.save(cliente);
+    }
+
+    public void deletaCadastro(Long id) throws Exception {
+        cli.deleteById(id);
+    }
+
 }
