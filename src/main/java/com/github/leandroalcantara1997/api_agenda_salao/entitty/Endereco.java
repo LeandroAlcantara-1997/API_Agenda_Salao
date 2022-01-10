@@ -3,16 +3,27 @@ package com.github.leandroalcantara1997.api_agenda_salao.entitty;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
+import org.springframework.format.annotation.NumberFormat;
+
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 
-//@Entity
+@Entity
 public class Endereco implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String estado;
     private String cidade;
     private String bairro;
@@ -20,6 +31,9 @@ public class Endereco implements Serializable {
     private String rua;
     private String numero;
     private String complemento;
+
+
+
 
     public Long getId() {
         return id;

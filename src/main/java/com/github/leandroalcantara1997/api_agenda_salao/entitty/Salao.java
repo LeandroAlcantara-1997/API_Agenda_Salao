@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
 //@Entity
 public class Salao implements Serializable {
     private Long Id;
@@ -20,6 +21,10 @@ public class Salao implements Serializable {
     private Endereco endereco;
     private Contato contato;
     
+    public Salao(String nome_fantasia, String cnpj, Agenda agenda, Login login, Endereco endereco, Contato contato) {
+
+    }
+
     public Long getId() {
         return Id;
     }

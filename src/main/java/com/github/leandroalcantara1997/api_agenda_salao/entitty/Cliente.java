@@ -4,12 +4,21 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.leandroalcantara1997.api_agenda_salao.utils.ValidaDados;
+
+import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -27,9 +36,24 @@ public class Cliente implements Serializable {
 
     private String nome;
     private String sobrenome;
+
+    @NotEmpty
+    @Column(unique = true)
     private String cpf;
+
+    @NotEmpty
+    @Column(unique = true)
     private String rg;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date data_nascimento;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_endereco")
+    private Endereco endereco;
+    
+    /*private Contato contato;
+    private Login login;*/
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
